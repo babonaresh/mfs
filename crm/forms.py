@@ -1,7 +1,6 @@
 from django import forms
 from .models import Customer, Service, Product
-from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
+
 class CustomerForm(forms.ModelForm):
     class Meta:
         model = Customer
