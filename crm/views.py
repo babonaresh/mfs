@@ -1,6 +1,5 @@
 from django.db.models import Sum
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
 from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
 from .models import *
@@ -146,17 +145,17 @@ def summary(request, pk):
 
 def password_reset(request):
     return render(request, 'home/password_reset.html',
-    {'home': password_reset})
+    {'registration': password_reset})
 
 
 def password_reset_confirm(request):
     return render(request, 'home/password_reset_confirm.html',
-    {'home': password_reset_confirm})
+    {'registration': password_reset_confirm})
 
 def password_reset_email(request):
     return render(request, 'home/password_reset_email.html',
-    {'home': password_reset_email})
+    {'registration': password_reset_email})
 
 def password_reset_complete(request):
     return render(request, 'home/password_reset_complete.html',
-    {'home': password_reset_complete})
+    {'registration': password_reset_complete})
