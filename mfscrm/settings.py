@@ -39,10 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crm',
-    'mathfilters',
     'crispy_forms',
+    'mathfilters',
     'django.contrib.humanize',
-    'taggit',
 
 ]
 
