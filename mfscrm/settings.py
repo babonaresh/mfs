@@ -56,6 +56,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+AUTHENTICATION_BACKENDS =['django.contrib.auth.backends.ModelBackend']
 ROOT_URLCONF = 'mfscrm.urls'
 
 TEMPLATES = [
@@ -86,7 +87,7 @@ DATABASES = {
         'NAME': 'd8gq154tfj5ee9',
         'USER': 'srkdeqtsjetmiy',
         'PASSWORD': '7ecb74defb4cb9a78df3770faf4ac6d4325513ffe6719271d10c0f1432ec19b1',
-        'HOST': 'ec2-23-21-171-249.compute-1.amazonaws.com',
+        'HOST': 'postgres://srkdeqtsjetmiy:7ecb74defb4cb9a78df3770faf4ac6d4325513ffe6719271d10c0f1432ec19b1@ec2-23-21-171-249.compute-1.amazonaws.com:5432/d8gq154tfj5ee9@ec2-23-21-171-249.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
