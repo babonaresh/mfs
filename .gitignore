@@ -10,7 +10,6 @@ __pycache__/
 *~
 __pycache__
 myvenv
-db.sqlite3
 /static
 .DS_Store
 .idea/workspace.xml
@@ -63,10 +62,7 @@ coverage.xml
 *.mo
 *.pot
 
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
+
 
 # Flask stuff:
 instance/
