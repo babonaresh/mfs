@@ -124,9 +124,6 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/dev/howto/static-files/
-
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
@@ -145,15 +142,14 @@ DATABASES['default'] = dj_database_url.config()
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 
-
+#STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 EMAIL_HOST = 'smtp.mailtrap.io'
-EMAIL_HOST_USER = 'babonaresh@gmail.com'
-EMAIL_HOST_PASSWORD = 'naresh@004'
+EMAIL_HOST_USER = 'YOUR HOST USER'
+EMAIL_HOST_PASSWORD = 'YOUR HOST PASSWORD'
 EMAIL_PORT = 2525
 #EMAIL_USE_TLS = True
 
@@ -161,7 +157,7 @@ EMAIL_PORT = 2525
 try:
     from .local_settings import *
 except ImportError:
-    pass
+    print('Import Error')
 STATIC_URL = '/static/'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
