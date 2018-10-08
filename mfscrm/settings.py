@@ -152,8 +152,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 EMAIL_HOST = 'smtp.mailtrap.io'
-EMAIL_HOST_USER = 'YOUR HOST USER'
-EMAIL_HOST_PASSWORD = 'YOUR HOST PASSWORD'
+EMAIL_HOST_USER = 'babonaresh@gmail.com'
+EMAIL_HOST_PASSWORD = 'naresh@004'
 EMAIL_PORT = 2525
 #EMAIL_USE_TLS = True
 
