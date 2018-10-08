@@ -1,7 +1,5 @@
-*.pyc
-*~
-__pycache__
-myvenv
 db.sqlite3
-/static
-.DS_Store
+crm/__pycache__
+mfscrm/__pycache__
+mfscrm/local_settings.py
+mfscrm/backup_settings.py
