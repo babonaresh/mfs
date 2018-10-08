@@ -1,5 +1,5 @@
 from django.db.models import Sum
-
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
 from .models import *
@@ -10,13 +10,13 @@ def home(request):
    return render(request, 'crm/home.html',
                  {'crm': home})
 
-
+@login_required
 def customer_list(request):
     customer = Customer.objects.filter(created_date__lte=timezone.now())
     return render(request, 'crm/customer_list.html',
                  {'customers': customer})
 
-
+@login_required
 def customer_edit(request, pk):
    customer = get_object_or_404(Customer, pk=pk)
    if request.method == "POST":
@@ -34,18 +34,18 @@ def customer_edit(request, pk):
        form = CustomerForm(instance=customer)
        return render(request, 'crm/customer_edit.html', {'form': form})
 
-
+@login_required
 def customer_delete(request, pk):
    customer = get_object_or_404(Customer, pk=pk)
    customer.delete()
    return redirect('crm:customer_list')
 
-
+@login_required
 def service_list(request):
    services = Service.objects.filter(created_date__lte=timezone.now())
    return render(request, 'crm/service_list.html', {'services': services})
 
-
+@login_required
 def service_new(request):
    if request.method == "POST":
        form = ServiceForm(request.POST)
@@ -61,7 +61,7 @@ def service_new(request):
        # print("Else")
    return render(request, 'crm/service_new.html', {'form': form})
 
-
+@login_required
 def service_edit(request, pk):
    service = get_object_or_404(Service, pk=pk)
    if request.method == "POST":
@@ -78,18 +78,18 @@ def service_edit(request, pk):
        form = ServiceForm(instance=service)
    return render(request, 'crm/service_edit.html', {'form': form})
 
-
+@login_required
 def service_delete(request, pk):
    service = get_object_or_404(Service, pk=pk)
    service.delete()
    return redirect('crm:service_list')
 
-
+@login_required
 def product_list(request):
    products = Product.objects.filter(created_date__lte=timezone.now())
    return render(request, 'crm/product_list.html', {'products': products})
 
-
+@login_required
 def product_new(request):
    if request.method == "POST":
        form = ProductForm(request.POST)
@@ -105,7 +105,7 @@ def product_new(request):
        # print("Else")
    return render(request, 'crm/product_new.html', {'form': form})
 
-
+@login_required
 def product_edit(request, pk):
    product = get_object_or_404(Product, pk=pk)
    if request.method == "POST":
@@ -122,13 +122,13 @@ def product_edit(request, pk):
        form = ProductForm(instance=product)
    return render(request, 'crm/product_edit.html', {'form': form})
 
-
+@login_required
 def product_delete(request, pk):
    product = get_object_or_404(Product, pk=pk)
    product.delete()
    return redirect('crm:product_list')
 
-
+@login_required
 def summary(request, pk):
     customer = get_object_or_404(Customer, pk=pk)
     customers = Customer.objects.filter(created_date__lte=timezone.now())
